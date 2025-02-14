@@ -66,19 +66,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-.note {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    background: #ffeb99;
-    transform: rotate(-10deg);
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
 
-.note:nth-child(1) { top: 50px; left: 100px; background: #c3e6cb; }
-.note:nth-child(2) { top: 80px; right: 150px; background: #f5c6cb; }
-.note:nth-child(3) { bottom: 100px; left: 80px; background: #ffeeba; transform: rotate(15deg); }
-.note:nth-child(4) { bottom: 120px; right: 100px; background: #d4edda; transform: rotate(-15deg); }
 
 
 .footer {

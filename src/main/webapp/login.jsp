@@ -25,10 +25,7 @@
     </form>
 </div>
 
-<div class="note"></div>
-<div class="note"></div>
-<div class="note"></div>
-<div class="note"></div>
+
 
 <div class="footer">
     &copy; 2025 Notitz Manager. Alle Rechte vorbehalten.
