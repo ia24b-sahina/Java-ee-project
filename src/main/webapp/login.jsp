@@ -6,12 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notitz Manager - Login</title>
+    <title>Notiz Manager - Login</title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
 
-<h1>Notitz Manager</h1>
+<h1>Notiz Manager</h1>
 
 <div class="login-container">
     <c:if test="${param.error != null}">
@@ -25,11 +25,10 @@
     </form>
 </div>
 
-
-
-<div class="footer">
-    &copy; 2025 Notitz Manager. Alle Rechte vorbehalten.
-</div>
+<img src="${pageContext.request.contextPath}/img/pinker_zettel.png" alt="Notiz" class="note note1">
+<img src="${pageContext.request.contextPath}/img/gelber_zettel.png" alt="Notiz" class="note note2">
+<img src="${pageContext.request.contextPath}/img/gelber_zettel.png" alt="Notiz" class="note note3">
+<img src="${pageContext.request.contextPath}/img/pinker_zettel.png" alt="Notiz" class="note note4">
 
 </body>
 </html>

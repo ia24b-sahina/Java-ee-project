@@ -1,15 +1,31 @@
 package org.example.notiztenprojekt;
 
-import java.io.*;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.annotation.WebServlet;
+import java.io.IOException;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet("/BearbeitenServlet")
 public class BearbeitenServlet extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String action = request.getParameter("action");
+        String noteIDParam = request.getParameter("noteID");
+        int noteID = noteIDParam.isEmpty() ? -1 : Integer.parseInt(noteIDParam);
 
+        if ("Löschen".equals(action)) {
+            BearbeitenDAO.deleteNote(noteID);
+        } else if ("Speichern".equals(action)) {
+            String title = request.getParameter("title");
+            String content = request.getParameter("content");
+
+            if (noteID == -1) {
+                response.sendRedirect("bearbeiten.jsp");
+                return;
+            } else {
+                BearbeitenDAO.updateNote(noteID, title, content);
+            }
+        }
+
+        response.sendRedirect("bearbeiten.jsp");
     }
 }

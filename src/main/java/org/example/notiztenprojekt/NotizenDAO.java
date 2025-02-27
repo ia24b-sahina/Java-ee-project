@@ -8,7 +8,8 @@ public class NotizenDAO {
 
     public static boolean createNote(int userID, String title, String content) {
         try (Connection conn = DatabaseConnection.getConnection()) {
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO Notizen (Titel, Inhalt, UserID) VALUES (?, ?, ?)");
+            PreparedStatement stmt = conn.prepareStatement(
+                    "INSERT INTO Notizen (Titel, Inhalt, UserID) VALUES (?, ?, ?)");
             stmt.setString(1, title);
             stmt.setString(2, content);
             stmt.setInt(3, userID);
@@ -19,31 +20,21 @@ public class NotizenDAO {
         return false;
     }
 
-    public static List<String> getNotes(int userID) {
-        List<String> notes = new ArrayList<>();
+    // Methode gibt Titel + Inhalt zurück!
+    public static List<String[]> getNotes(int userID) {
+        List<String[]> notes = new ArrayList<>();
         try (Connection conn = DatabaseConnection.getConnection()) {
-            PreparedStatement stmt = conn.prepareStatement("SELECT Titel FROM Notizen WHERE UserID = ? ORDER BY NotizenID DESC");
+            PreparedStatement stmt = conn.prepareStatement(
+                    "SELECT Titel, Inhalt FROM Notizen WHERE UserID = ? ORDER BY NotizenID DESC");
             stmt.setInt(1, userID);
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                notes.add(rs.getString("Titel"));
+                notes.add(new String[]{rs.getString("Titel"), rs.getString("Inhalt")});
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return notes;
-    }
-
-    public static boolean deleteNote(int noteID, int userID) {
-        try (Connection conn = DatabaseConnection.getConnection()) {
-            PreparedStatement stmt = conn.prepareStatement("DELETE FROM Notizen WHERE NotizenID = ? AND UserID = ?");
-            stmt.setInt(1, noteID);
-            stmt.setInt(2, userID);
-            return stmt.executeUpdate() > 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
     }
 }
