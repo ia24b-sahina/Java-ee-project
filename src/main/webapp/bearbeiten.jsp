@@ -33,20 +33,8 @@
 </head>
 <body>
 
-<!-- Bearbeitungsformular -->
-<div class="note-form-container">
-    <h2>Notiz bearbeiten</h2>
-    <form action="BearbeitenServlet" method="post">
-        <%--@declare id="title"--%><%--@declare id="content"--%><input type="hidden" name="noteID" value="<%= editID != null ? editID : "" %>">
-
-        <label for="title">Titel:</label>
-        <input type="text" name="title" value="<%= editTitle %>" required>
-
-        <label for="content">Inhalt:</label>
-        <textarea name="content" required><%= editContent %></textarea>
-
-        <input type="submit" name="action" value="Speichern">
-    </form>
+<div class="titel-container">
+    <h1>Notizen bearbeiten</h1>
 </div>
 
 <div class="notes-container">
@@ -76,6 +64,20 @@
             <p>Keine Notizen vorhanden.</p>
         </c:otherwise>
     </c:choose>
+</div>
+<div class="note-form-container">
+    <h2>Notiz bearbeiten</h2>
+    <form action="BearbeitenServlet" method="post">
+        <%--@declare id="title"--%><%--@declare id="content"--%><input type="hidden" name="noteID" value="<%= editID != null ? editID : "" %>">
+
+        <label for="title">Titel:</label>
+        <input type="text" name="title" value="<%= editTitle %>" required>
+
+        <label for="content">Inhalt:</label>
+        <textarea name="content" required><%= editContent %></textarea>
+
+        <input type="submit" name="action" value="Speichern">
+    </form>
 </div>
 
 <div class="links">

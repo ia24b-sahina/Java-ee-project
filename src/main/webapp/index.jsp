@@ -18,7 +18,9 @@
 
 </head>
 <body>
-
+<div class="titel-container">
+    <h1>Notizen erstellen</h1>
+</div>
 <div class="note-form-container">
     <h1>Neue Notiz</h1>
     <form action="note" method="post">
@@ -52,6 +54,5 @@
 <div class="links">
     <a href="bearbeiten.jsp">Notizen verwalten</a> | <a href="login.jsp">Logout</a>
 </div>
-
 </body>
 </html>
