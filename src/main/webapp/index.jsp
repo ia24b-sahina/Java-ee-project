@@ -1,11 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ page import="org.example.notiztenprojekt.NotizenDAO, java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 
 <%
-    int userID = 1;
-    List<String[]> notes = NotizenDAO.getNotes(userID);
-    request.setAttribute("notes", notes);
+    List<String[]> notes = new ArrayList<>();
+    if (session.getAttribute("userId") != null){
+       int userID = (int) session.getAttribute("userId");
+    notes = NotizenDAO.getNotes(userID);
+       request.setAttribute("notes", notes);
+   }else{
+        response.sendRedirect("login.jsp");
+    }
+
 %>
 
 <!DOCTYPE html>
