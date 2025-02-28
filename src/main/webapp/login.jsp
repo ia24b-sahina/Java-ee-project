@@ -11,7 +11,9 @@
 </head>
 <body>
 
-<h1>Notiz Manager</h1>
+<div class="titel-container">
+    <h1>Notiz Manager</h1>
+</div>
 
 <div class="login-container">
     <c:if test="${param.error != null}">
@@ -19,8 +21,12 @@
     </c:if>
 
     <form action="login" method="post">
-        <input type="text" name="benutzername" placeholder="Benutzername" required>
-        <input type="password" name="passwort" placeholder="Passwort" required>
+        <label for="benutzername">Benutzername:</label>
+        <input type="text" id="benutzername" name="benutzername" placeholder="Benutzername" required>
+
+        <label for="passwort">Passwort:</label>
+        <input type="password" id="passwort" name="passwort" placeholder="Passwort" required>
+
         <button type="submit">Log in</button>
     </form>
 </div>

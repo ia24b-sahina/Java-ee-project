@@ -30,6 +30,9 @@
         <label for="content">Beschreibung:</label>
         <textarea id="content" name="content" required></textarea>
 
+        <label for="image">Bild hochladen:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+
         <input type="submit" value="Speichern">
     </form>
 </div>
