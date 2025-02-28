@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    height: 100vh;
+    padding-top: 120px;
+}
+
+.note-form-container {
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.note-form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.note-form-container h1 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.note-form-container input,
+.note-form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 15px;
+}
+
+.note-form-container input:focus,
+.note-form-container textarea:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.note-form-container textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.note-form-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 15px;
+}
+
+.note-form-container input[type="submit"]:hover {
+    background: linear-gradient(90deg, #0056b3, #003d80);
+    transform: scale(1.05);
+}
+
+.notes-container {
+    width: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    max-height: 80vh;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.notes-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+.notes-container h2 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.note-item {
+    background: #fffbe6;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 8px rgba(255, 204, 0, 0.3);
+    border-left: 5px solid #ffcc00;
+    font-size: 1.1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.note-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 12px rgba(255, 204, 0, 0.5);
+    background: #fff5c4;
+}
+
+.links {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.links a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    margin: 0 15px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #0056b3;
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.titel-container h1{
+    font-size: 50px;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.titel-container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 20px; /* Abstand nach oben */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+}

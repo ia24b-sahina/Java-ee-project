@@ -1,0 +1,114 @@
+/* Allgemeine Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Titel-Container */
+.titel-container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.titel-container h1 {
+    font-size: 50px;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Login-Container */
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h1 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 15px;
+}
+
+.login-container input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 15px;
+}
+
+.login-container button:hover {
+    background: linear-gradient(90deg, #0056b3, #003d80);
+    transform: scale(1.05);
+}
+
+.error-message {
+    color: #dc3545;
+    margin-bottom: 15px;
+}
+
+/* Notiz-Bild Styling */
+.note {
+    position: absolute;
+    width: 100px;
+    height: auto;
+}
+
+.note1 { top: 10%; left: 10%; }
+.note2 { top: 20%; right: 15%; }
+.note3 { bottom: 20%; left: 15%; }
+.note4 { bottom: 10%; right: 10%; }
