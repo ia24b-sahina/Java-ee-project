@@ -7,8 +7,8 @@ import java.sql.SQLException;
 
 public class UserDAO {
 
-    public boolean getUser(String benutzername, String passwort) {
-        String query = "SELECT * FROM User WHERE benutzername = ? AND Passwort = ?";
+    public int getUser(String benutzername, String passwort) {
+        String query = "SELECT UserID FROM User WHERE benutzername = ? AND Passwort = ?";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
@@ -16,11 +16,12 @@ public class UserDAO {
             preparedStatement.setString(2, passwort);
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                return resultSet.next();
+                resultSet.next();
+                return resultSet.getInt("UserID");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return -1;
     }
 }

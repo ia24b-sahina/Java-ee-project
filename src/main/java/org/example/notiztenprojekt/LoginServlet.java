@@ -15,10 +15,11 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String benutzername = request.getParameter("benutzername");
         String password = request.getParameter("passwort");
-
-        if (userDAO.getUser(benutzername, password)) {
+        int userID = userDAO.getUser(benutzername, password);
+        if (userID >= 0) {
             HttpSession session = request.getSession();
             session.setAttribute("benutzername", benutzername);
+            session.setAttribute("userId", userID);
             response.sendRedirect("index.jsp");
         } else {
             response.sendRedirect("login.jsp?error=true");

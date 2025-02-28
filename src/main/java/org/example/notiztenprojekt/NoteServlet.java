@@ -10,8 +10,9 @@ public class NoteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String title = request.getParameter("title");
         String content = request.getParameter("content");
+        HttpSession session = request.getSession();
 
-        int userID = 1; // Falls Login-System existiert, echte User-ID setzen
+        int userID = (int) session.getAttribute("userId"); // Falls Login-System existiert, echte User-ID setzen
 
         // Notiz speichern
         NotizenDAO.createNote(userID, title, content);
